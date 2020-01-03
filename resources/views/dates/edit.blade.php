@@ -8,7 +8,7 @@
             <div class="col-lg-12">
                 <div class="card text-center col-lg-12">
     <h1 class="text-center header">Modificar registro</h1>
-    <form  method="POST" action="/appointments/{{$dates->id }}" style="margin-bottom: 1em;">
+    <form id="update" method="POST" action="/appointments/{{$dates->id }}" style="margin-bottom: 1em;">
         @csrf
         {{method_field('PATCH')}}
         <div class="form-group">
@@ -94,20 +94,20 @@
             <textarea class="form-control" type="text" name="comment" id="comment" rows="3" placeholder="Comentarios">{{$dates->comment}}</textarea>
         </div>
         <div class="text-center">
-        <button type="submit" class="btn btn-primary">Modificar información</button>
+        <input type="button" id="click1" class="btn btn-primary" value="Actualizar">
             </div>
 
 
 
     </form>
 
-                    <form method="POST" action="/appointments/{{$dates->id }}">
+                    <form id="delete" method="POST" action="/appointments/{{$dates->id }}">
                         @method('DELETE')
                         @csrf
 
 
                         <div class="text-center" style="padding-bottom:20px">
-                            <button type="submit" class="btn btn-danger">Eliminar registro</button>
+                            <input type="button" id="click2" class="btn btn-danger" value="Eliminar">
                         </div>
                         @include('errors.errors')
 
@@ -170,8 +170,80 @@
 
 </script>
 
+    <script>
 
 
+        $("#click2").click(function(){
+
+            Swal.fire({
+                title: 'Esta seguro?',
+                text: "Esta accion no se puede revertir",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Si, borrar!'
+            }).then((result) => {
+                if (result.value) {
+                $("#delete")[0].submit();
+            }
+        })
+
+
+        });
+
+
+    </script>
+
+    <script>
+
+
+        $("#click1").click(function(){
+
+            Swal.fire({
+                title: 'Esta seguro?',
+                text: "La información es correcta?",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Si, es correcta!'
+            }).then((result) => {
+                if (result.value) {
+                $("#update")[0].submit();
+            }
+        })
+
+
+        });
+
+
+      /*  $("#update").submit(function(event){
+            Swal.fire({
+                title: 'Esta seguro?',
+                text: "La información es correcta?",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Si, es correcta!'
+            }).then((result) => {
+                if (result.value) {
+                Swal.fire(
+                    'Modificado',
+                    'Su cita se ha modificado.',
+                    'success'
+                )
+            }
+        })
+
+        })*/
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+    <script src="sweetalert2.all.min.js"></script>
+    <!-- Optional: include a polyfill for ES6 Promises for IE11 -->
+    <script src="https://cdn.jsdelivr.net/npm/promise-polyfill"></script>
 
 
 
