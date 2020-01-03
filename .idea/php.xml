@@ -89,7 +89,10 @@
       <path value="$PROJECT_DIR$/vendor/opis/closure" />
       <path value="$PROJECT_DIR$/vendor/phpunit/phpunit" />
       <path value="$PROJECT_DIR$/vendor/laravel/ui" />
+<<<<<<< HEAD
       <path value="$PROJECT_DIR$/vendor/laracasts/flash" />
+=======
+>>>>>>> 0f1d419dfdd927c54a59adeff7242b80ba647735
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="7.2" />

@@ -4,7 +4,11 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
+<<<<<<< HEAD
     "content-hash": "a49b7cc20b0fd4bb8b18319a215ad017",
+=======
+    "content-hash": "92095327b9af0c90f8245c5d6a659ab4",
+>>>>>>> 0f1d419dfdd927c54a59adeff7242b80ba647735
     "packages": [
         {
             "name": "dnoegel/php-xdg-base-dir",
@@ -469,6 +473,7 @@
             "time": "2018-09-29T18:48:56+00:00"
         },
         {
+<<<<<<< HEAD
             "name": "laracasts/flash",
             "version": "3.0.3",
             "source": {
@@ -523,6 +528,8 @@
             "time": "2019-09-03T18:59:42+00:00"
         },
         {
+=======
+>>>>>>> 0f1d419dfdd927c54a59adeff7242b80ba647735
             "name": "laravel/framework",
             "version": "v6.6.0",
             "source": {
